@@ -1,0 +1,32 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.ViewDisastersModel
+@{
+}
+@if (Model.errorMessage.Length > 0)
+{
+    <p>@Model.errorMessage</p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Aid Type</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listDisaster)
+        {
+            <tr>
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td>@item.Location</td>
+                <td>@item.descripDisas</td>
+                <td>@item.AidType</td>
+            </tr>
+        }
+    </tbody>
+</table>

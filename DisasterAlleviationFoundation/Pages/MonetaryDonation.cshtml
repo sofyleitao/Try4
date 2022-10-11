@@ -1,0 +1,30 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.DonationModel
+@{
+    ViewData["Title"] = "Donation";
+}
+
+@if(Model.errorMessage.Length > 0)
+            {
+                <p>@Model.errorMessage</p>
+            }
+<form method="POST">
+    <div class="text-center">
+        <label for="date"><b>Date</b></label>
+        <input type="date" placeholder="Enter the date" name="dateMD" ID="dateMD" required>
+        <p>
+            <label for="Amount"><b>Amount</b></label>
+            <input type="number" placeholder="Enter the amount" name="amountMD" ID="amountMD" required>
+        </p>
+        <p>
+            <label for="Name"><b>Name of donor/Annonymous</b></label>
+            <input type="text" placeholder="Enter name of donor" name="donorMD" ID="donorMD" required>
+        </p>
+        <button class="btn btn-primary" ID="SubmitMD" Text="SubmitMD">Submit</button>
+        <a href="/Home" class="btn btn-primary">Cancel</a>
+    </div>
+    </form>
+@if(Model.successMessage.Length>0)
+            {
+                @Model.successMessage
+            }

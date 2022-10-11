@@ -1,0 +1,48 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.GoodsDonationModel
+@{
+}
+@if (Model.errorMessage.Length > 0)
+{
+    <p>@Model.errorMessage</p>
+}
+<script type="text/javascript">
+    function showfield(name) {
+        if (name == 'Other') document.getElementById('div1').innerHTML = 'Other:<br/> <input type="text" name="other" id=other class="input-field"> />';
+        else document.getElementById('div1').innerHTML = '';
+    }
+</script>
+<form method="POST">
+    <div class="text-center">
+
+        <label for="date"><b>Date</b></label>
+        <input type="date" placeholder="Enter the date" name="date" id=date required>
+        <p>
+            <label for="Items"><b>Number of Items</b></label>
+            <input type="number" placeholder="Enter amount of items" name="Items" id="items" required />
+        </p>
+        <select name="category" class="input-field" id="category" onchange="showfield(this.options[this.selectedIndex].value)">
+            <option selected="selected">Please select ...</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Non-perishable foods">Non-perishable foods</option>
+            <option value="Other">Other</option>
+        </select>
+        <div id="div1"></div>
+        <p>
+            <label for="Description"><b>Description</b></label>
+            <input type="text" placeholder="Enter the description" name="description" id="description" required />
+        </p>
+        <p>
+            <label for="Name"><b>Name of donor</b></label>
+            <input type="text" placeholder="Enter name or say anonymous" name="Name" id="Name" required>
+        </p>
+        <button class="btn btn-primary" ID="SubmitMD" Text="SubmitMD">Submit</button>
+        <a href="/Home" class="btn btn-primary">Cancel</a>
+    </div>
+    </form>
+    @if (Model.successMessage.Length > 0)
+    {
+        @Model.successMessage
+    }
+
+    <!---(SitePoint Pty Ltd, 2006)-->

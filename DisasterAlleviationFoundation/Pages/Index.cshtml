@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="POST">
+<div class="text-center">
+    
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" ID="uname" name="uname" required>
+    <p>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password"  ID="psw" name="psw" required>
+    </p>
+    <button class="btn btn-primary" ID="btnLogin" Text="Login">Login</button>
+
+    <p>View the donations report <a href="/Report"> here</a>.</p>
+</div>
+</form>

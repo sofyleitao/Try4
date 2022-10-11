@@ -1,0 +1,32 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.ViewGoodDonationModel
+@{
+}
+@if (Model.errorMessage.Length > 0)
+{
+    <p>@Model.errorMessage</p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Items</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Donor Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listGoodDonation)
+        {
+            <tr>
+                <td>@item.dateGD</td>
+                <td>@item.items</td>
+                <td>@item.category</td>
+                <td>@item.description</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

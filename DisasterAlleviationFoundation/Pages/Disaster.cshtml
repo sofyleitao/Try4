@@ -1,0 +1,37 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.DisasterModel
+@{
+}
+@if (Model.errorMessage.Length > 0)
+{
+    <p>@Model.errorMessage</p>
+}
+<form method="POST">
+    <div class="text-center">
+        
+        <label for="StartDate"><b>Start Date</b></label>
+        <input type="date" placeholder="Enter start date" name="StartDate" id="StartDate" required>
+        <p>
+            <label for="EndDate"><b>End Date</b></label>
+            <input type="date" placeholder="Enter end date" name="EndDate" id="EndDate" required>
+        </p>
+        <p>
+            <label for="Location"><b>Location</b></label>
+            <input type="text" placeholder="Enter the location" name="Location" id="Location">
+        </p>
+        <p>
+            <label for="descripDisas"><b>Description</b></label>
+            <input type="text" placeholder="Enter the description " id="descripDisas" name="descripDisas" required>
+        </p>
+        <p>
+            <label for="aidType"><b>Aid Type</b></label>
+            <input type="text" placeholder="Enter aid type" name="AidType" id="AidType" required>
+        </p>
+        <button class="btn btn-primary" ID="SubmitMD" Text="SubmitMD">Submit</button>
+        <a href="/Home" class="btn btn-primary">Cancel</a>
+    </div>
+</form>
+@if (Model.successMessage.Length > 0)
+{
+    @Model.successMessage
+}
