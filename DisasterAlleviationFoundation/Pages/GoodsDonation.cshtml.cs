@@ -25,6 +25,7 @@ namespace DisasterAlleviationFoundation.Pages
             string Description = Request.Form["description"];
             string DonorGD = Request.Form["Name"];
             string Other = Request.Form["Other"];
+            string ActiveDisaster = Request.Form["activeDisaster"];
 
             DateTime date = DateGD.Date;
             try
@@ -33,7 +34,7 @@ namespace DisasterAlleviationFoundation.Pages
 
                 SqlConnection connection = new SqlConnection(connectionString);
 
-                string sql = "INSERT INTO GoodsDonations (DateGD,Items,Category,Description,DonorGD) VALUES(@date,@items,@category,@description,@Name)";
+                string sql = "INSERT INTO GoodsDonations (DateGD,Items,Category,Description,DonorGD,ActiveDisaster) VALUES(@date,@items,@category,@description,@Name,@activeDisaster)";
 
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
@@ -42,6 +43,7 @@ namespace DisasterAlleviationFoundation.Pages
                 //cmd.Parameters.AddWithValue("@category", Category);
                 cmd.Parameters.AddWithValue("@description", Description);
                 cmd.Parameters.AddWithValue("@Name", DonorGD);
+                cmd.Parameters.AddWithValue("@activeDisaster", ActiveDisaster);
 
                 if (Category != null)
                 {
@@ -56,7 +58,7 @@ namespace DisasterAlleviationFoundation.Pages
                 cmd.ExecuteNonQuery();
 
                 connection.Close();
-                
+              
                 successMessage = "Yaaay you donated thank you";
                 Response.Redirect("/ViewGoodDonation");
             }

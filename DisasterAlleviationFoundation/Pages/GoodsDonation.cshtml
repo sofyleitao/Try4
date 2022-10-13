@@ -21,6 +21,7 @@
             <label for="Items"><b>Number of Items</b></label>
             <input type="number" placeholder="Enter amount of items" name="Items" id="items" required />
         </p>
+        <label for="category"><b>Category</b></label>
         <select name="category" class="input-field" id="category" onchange="showfield(this.options[this.selectedIndex].value)">
             <option selected="selected">Please select ...</option>
             <option value="Clothes">Clothes</option>
@@ -36,6 +37,16 @@
             <label for="Name"><b>Name of donor</b></label>
             <input type="text" placeholder="Enter name or say anonymous" name="Name" id="Name" required>
         </p>
+        <p>
+        <label for="activeDisaster"><b>Active Disaster</b></label>
+        <select name="activeDisaster" class="input-field" id="activeDisaster" onchange="showfield(this.options[this.selectedIndex].value)">
+            <option selected="selected">Please select ...</option>
+            <option value="Hurricane">Hurricane</option>
+            <option value="Flooding">Flooding</option>
+            <option value="Earthquake">Earthquake</option>
+            <option value="Tsunami">Tsunami</option>
+        </select>
+            </p>
         <button class="btn btn-primary" ID="SubmitMD" Text="SubmitMD">Submit</button>
         <a href="/Home" class="btn btn-primary">Cancel</a>
     </div>

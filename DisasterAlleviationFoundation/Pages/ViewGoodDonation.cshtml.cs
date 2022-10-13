@@ -35,6 +35,7 @@ namespace DisasterAlleviationFoundation.Pages
                                 goodDonation.category = reader.GetString(2);
                                 goodDonation.description = reader.GetString(3);
                                 goodDonation.Name = reader.GetString(4);
+                                goodDonation.activeDisaster = reader.GetString(5);
 
                                 listGoodDonation.Add(goodDonation);
                             }
@@ -57,6 +58,7 @@ namespace DisasterAlleviationFoundation.Pages
             public String category;
             public String description;
             public String Name;
+            public String activeDisaster;
         }
     }
     }
